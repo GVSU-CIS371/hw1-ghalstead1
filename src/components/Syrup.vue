@@ -1,8 +1,18 @@
 <template>
-  <div class="syrup"></div>
+  <div class="syrup" :style="{ backgroundColor: syrupColor }"></div>
 </template>
 
-<script setup lang="ts"></script>
+<script>
+export default {
+  props: {
+    syrupColor: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .syrup {
   transform: translateY(400%);
@@ -12,5 +22,6 @@
   height: 20%;
   animation: pour-tea 2s 1s forwards;
   z-index: 2;
+  transition: background-color 0.5s ease;
 }
 </style>
